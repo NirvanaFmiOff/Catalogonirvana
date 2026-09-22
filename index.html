@@ -10,42 +10,59 @@
             color: #ffffff;
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
         }
         h1 {
             color: #00ffcc;
             margin-bottom: 5px;
+            font-size: 1.5rem;
         }
         p {
             color: #b0b0b0;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            /* Esta línea es clave para el celular: adapta el tamaño mínimo */
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
             max-width: 1200px;
             margin: 0 auto;
         }
         .card {
             background-color: #1e1e1e;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
             transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .card:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
         .card img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 6px;
+            object-fit: contain;
+            max-height: 150px; /* Limita la altura de la imagen para que no se dispare */
         }
         .card h3 {
-            margin: 15px 0 5px 0;
+            margin: 8px 0 2px 0;
             color: #ffffff;
+            font-size: 0.8rem;
+        }
+        /* Estilo especial para el banner */
+        .banner-card {
+            grid-column: 1 / -1; /* Ocupa todo el ancho */
+            background: linear-gradient(45deg, #1e1e1e, #2a2a2a);
+        }
+        .banner-card img {
+            max-height: 300px;
         }
     </style>
 </head>
@@ -56,12 +73,12 @@
 
     <div class="grid">
         <!-- Banner principal -->
-        <div class="card" style="grid-column: 1 / -1;">
+        <div class="card banner-card">
             <img src="tu-banner.jpg" alt="Banner Nirvana Check">
             <h3>NIRVANA CHECK PREMIUM</h3>
         </div>
 
-        <!-- iPhone 7 al 11 -->
+        <!-- Lista de iPhones (nombres de archivo corregidos) -->
         <div class="card">
             <img src="iphone-7.png" alt="iPhone 7">
             <h3>iPhone 7</h3>
@@ -83,6 +100,7 @@
             <h3>iPhone X</h3>
         </div>
         <div class="card">
+            <!-- Asegúrate que el archivo se llame exactamente iphone-xr.png -->
             <img src="iphone-xr.png" alt="iPhone XR">
             <h3>iPhone XR</h3>
         </div>
@@ -110,8 +128,6 @@
             <img src="iphone-11pro-max.png" alt="iPhone 11 Pro Max">
             <h3>iPhone 11 Pro Max</h3>
         </div>
-
-        <!-- iPhone 12 y 13 -->
         <div class="card">
             <img src="iphone-12.png" alt="iPhone 12">
             <h3>iPhone 12</h3>
@@ -144,8 +160,6 @@
             <img src="iphone-13-pro-max.png" alt="iPhone 13 Pro Max">
             <h3>iPhone 13 Pro Max</h3>
         </div>
-
-        <!-- iPhone 14 -->
         <div class="card">
             <img src="iphone-14.png" alt="iPhone 14">
             <h3>iPhone 14</h3>
@@ -162,8 +176,6 @@
             <img src="iphone-14-pro-max.png" alt="iPhone 14 Pro Max">
             <h3>iPhone 14 Pro Max</h3>
         </div>
-
-        <!-- iPhone 15 -->
         <div class="card">
             <img src="iphone-15.png" alt="iPhone 15">
             <h3>iPhone 15</h3>
@@ -180,8 +192,6 @@
             <img src="iphone-15-pro-max.png" alt="iPhone 15 Pro Max">
             <h3>iPhone 15 Pro Max</h3>
         </div>
-
-        <!-- iPhone 16 -->
         <div class="card">
             <img src="iphone-16.png" alt="iPhone 16">
             <h3>iPhone 16</h3>
@@ -198,12 +208,6 @@
             <img src="iphone-16-pro-max.png" alt="iPhone 16 Pro Max">
             <h3>iPhone 16 Pro Max</h3>
         </div>
-
-        <!-- iPhone 17 y SE 3 -->
-        <div class="card">
-            <img src="iphone-se-3rd-gen.png" alt="iPhone SE 3">
-            <h3>iPhone SE (3rd Gen)</h3>
-        </div>
         <div class="card">
             <img src="iphone-17.png" alt="iPhone 17">
             <h3>iPhone 17</h3>
@@ -215,6 +219,10 @@
         <div class="card">
             <img src="iphone-17-pro-max.png" alt="iPhone 17 Pro Max">
             <h3>iPhone 17 Pro Max</h3>
+        </div>
+        <div class="card">
+            <img src="iphone-se-3rd-gen.png" alt="iPhone SE 3">
+            <h3>iPhone SE (3rd Gen)</h3>
         </div>
     </div>
 
